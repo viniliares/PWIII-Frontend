@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ListaPagamentoComponent } from './lista-pagamento/lista-pagamento.component';
 import { NovoPagamentoComponent } from './novo-pagamento/novo-pagamento.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { NovoPagamentoComponent } from './novo-pagamento/novo-pagamento.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
