@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPagamentoComponent implements OnInit {
 
-  constructor() { }
+  pagamentos : Pagamento[];
+
+  constructor(private service: PagamentoAPIService) { }
 
   ngOnInit() {
+    this.service
+    .getPagamentos()
+    .subscribe((data: Pagamento[]) => this.pagamentos = data,
+              error => console.log(error));
   }
 
 }
