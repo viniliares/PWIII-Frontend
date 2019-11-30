@@ -22,15 +22,18 @@ export class PagamentoAPIService {
     window.alert(errorMessage);
     return throwError(errorMessage);
     }
-    getPagamento(): Observable<Pagamento[]> {
+
+    getPagamentos(): Observable<Pagamento[]> {
       return this.httpClient.get<Pagamento[]>(this.apiURL)
       .pipe(retry(1),
       catchError(this.handleError))
       }
+
       createCliente(clie: Pagamento): Observable<Pagamento> {
         return this.httpClient.post<Pagamento>(`${this.apiURL}`, clie)
         .pipe(retry(1),
         catchError(this.handleError));
         }
-  apiURL : string = "http://localhost:8080/api/clientes";
+        
+  apiURL : string = "http://localhost:8080/platpet/pagamento";
 }
